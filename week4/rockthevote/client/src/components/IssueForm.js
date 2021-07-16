@@ -6,8 +6,9 @@ const initInputs = {
   imgUrl: ""
 }
 
-export default function IssueForm(){
+export default function IssueForm(props){
   const [inputs, setInputs] = useState(initInputs)
+  const { addIssue } = props
 
   function handleChange(e){
     const {name, value} = e.target
@@ -19,11 +20,13 @@ export default function IssueForm(){
 
   function handleSubmit(e){
     e.preventDefault()
-    // add issue
+    addIssue(inputs)
+    setInputs(initInputs)
   }
 
   const { title, description, imgUrl } = inputs
   return (
+    <div className = "auth-container">
     <form onSubmit={handleSubmit}>
       <input 
         type="text" 
@@ -45,6 +48,6 @@ export default function IssueForm(){
         placeholder="Image Url"/>
       <button>Add Issue</button>
     </form>
+    </div>
   )
 }
-

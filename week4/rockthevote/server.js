@@ -38,6 +38,6 @@ app.use((err, req, res, next) => {
 })
 
 // SERVER PORT
-app.listen(8000, () => {
-    console.log('Server is running on Port 8000')
+app.listen(3000, () => {
+    console.log('Server is running on Port 3000')
 })

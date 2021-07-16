@@ -16,7 +16,7 @@ commentRouter.get("/", (req, res, next) => {
 })
 
 // GET ALL COMMENTS UNDER USER ID
-commentRouter.get('/user', (req, res, next) => {
+commentRouter.get("/user", (req, res, next) => {
     Comment.find({ user: req.user._id }, (err, comments) => {
         if(err){
             res.status(500)
@@ -51,7 +51,7 @@ commentRouter.post("/", (req, res, next) => {
 })
 
 // UPDATE COMMENT
-commentRouter.put("/:commentId", (req, res, next) => {
+commentRouter.put('/:commentId', (req, res, next) => {
     Comment.findOneAndUpdate(
         {_id: req.params.commentId, user: req.user._id}, 
         req.body, 
@@ -67,7 +67,7 @@ commentRouter.put("/:commentId", (req, res, next) => {
 })
 
 // DELETE COMMENT
-commentRouter.delete("/:commentId", (req, res, next) => {
+commentRouter.delete('/:commentId', (req, res, next) => {
     Comment.findOneAndDelete({_id: req.params.commentId, user: req.user._id}, (err, deletedComment) => {
         if(err){
             res.status(500)

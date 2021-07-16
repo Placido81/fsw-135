@@ -4,10 +4,9 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Auth from './components/Auth'
 import Profile from './components/Profile'
-import Issue from './components/IssueForm'
+import Issue from './components/Issue'
 import ProtectedRoute from './components/ProtectedRoute'
 import { UserContext } from './context/UserProvider'
-import Footer from './components/Footer'
 import './App.css';
 
 export default function App(){
@@ -35,7 +34,7 @@ export default function App(){
           
         />
       </Switch>
-      <Footer />
+      <Issue />
     </div>
   )
 }
